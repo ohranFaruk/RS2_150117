@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TurAgencijaRS2_Mobile1.Views.Rezervacije"
+             x:Name="page">
+    <ContentPage.Content>
+        <StackLayout Margin="0,5">
+        <StackLayout  HorizontalOptions="CenterAndExpand" >
+            <Image Source="rezervacija.PNG"></Image>
+                <Label  Text="Aktivne rezervacije" FontSize="23" TextColor="Black"  Style="{DynamicResource ListItemTextStyle}"   />
+            </StackLayout>
+
+            <StackLayout Margin="0,30,0,0">
+                <ListView ItemsSource="{Binding rezervacijeList}"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                <Grid  HorizontalOptions="CenterAndExpand" Padding="30,10,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                         
+
+                                        </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Putovanje}" FontSize="18" TextColor="Black" HorizontalOptions="Start"  />
+                                    <Label Grid.Column="1" Text="{Binding DatumR}" TextColor="Black" FontSize="18" HorizontalOptions="Start"  />
+                                    <Label Grid.Column="2" Text="{Binding iznos,  StringFormat='{0} KM '} "   TextColor="Black" FontSize="18" HorizontalOptions="Start"  />
+                                       
+                                    
+                                    
+                                    <Button CommandParameter="{Binding RezervacijaId}"
+                                    Command="{Binding BindingContext.ObrisiRezervaciju, Source={x:Reference page}" 
+                                    Grid.Column="3" Text="Otkaži"   BackgroundColor="#87CEEB"  TextColor="White"
+                                             >
+                                        </Button>
+
+                                    
+
+                                        <Button BindingContext="{Binding RezervacijaId}"
+                                    Clicked="Button1_Clicked"
+                                    Grid.Column="4" Text="Komentiraj"   BackgroundColor="#87CEEB"  TextColor="White"
+                                                Padding="0,0,10,0">
+                                        </Button>
+                                        
+                                    
+
+                                    </Grid>
+                            </StackLayout>
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            </StackLayout>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

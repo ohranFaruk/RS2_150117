@@ -1,0 +1,20 @@
+Aplikacija ima 4 uloge : 
+
+Desktop :
+
+Administrator:
+username:admin
+password:test
+
+Zaposlenik:
+username:zaposlenik.zaposlenik
+password:test
+
+Vodic:
+username:vodic.vodic
+password:test
+
+Mobile:
+Korisnik:
+username:korisnik.korisnik
+password:test

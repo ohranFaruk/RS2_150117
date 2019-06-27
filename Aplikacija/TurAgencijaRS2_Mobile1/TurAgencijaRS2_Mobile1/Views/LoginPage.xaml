@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:TurAgencijaRS2_Mobile1.ViewModels"
+             x:Class="TurAgencijaRS2_Mobile1.Views.LoginPage">
+    
+    <ContentPage.BindingContext>
+
+        <viewModels:LoginViewModel />
+
+    </ContentPage.BindingContext>
+
+
+  
+    
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Label Text="WT"  Margin="5" TextColor="#87CEEB" Font="Bold,50"></Label>
+     
+        
+        <StackLayout Padding="5" VerticalOptions="CenterAndExpand">
+            <Label Text="Korisnicko ime : "/>
+            <Entry Text="{Binding Username}" ></Entry>
+
+
+            <Label Text="Lozinka :  "/>
+            <Entry Text="{Binding Password}" IsPassword="True" ></Entry>
+
+                   
+            <Grid HorizontalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                  
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                   
+                </Grid.ColumnDefinitions>
+                    <Button Command="{Binding LoginCommand}" Grid.Row="0" Grid.Column="0" Text="Login" BackgroundColor="#87CEEB" TextColor="White"></Button>
+
+                    <Button Command="{Binding RegisterCommand}" Grid.Row="0" Grid.Column="1" Text="Register"  BackgroundColor="#87CEEB"  TextColor="White"></Button>
+
+
+             
+            </Grid>
+
+          
+
+        </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+    
+</ContentPage>

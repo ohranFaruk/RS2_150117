@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:TurAgencijaRS2_Mobile1.ViewModels"
+             xmlns:converters="clr-namespace:TurAgencijaRS2_Mobile1.Converters"
+             x:Class="TurAgencijaRS2_Mobile1.Views.Ponude">
+
+
+    <ContentPage.BindingContext>
+
+        <viewModels:PonudeViewModel />
+
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    
+    <ContentPage.Content>
+        
+     
+
+        <StackLayout>
+           
+            <ListView ItemsSource="{Binding ponudeList}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+
+
+                                <StackLayout Margin="0,-50,0,0">
+
+
+                                    <Image Source="{Binding Slika, Converter={StaticResource imgConv}}"  WidthRequest = "300" HeightRequest = "300" MinimumHeightRequest = "300" MinimumWidthRequest = "300" Margin="0,0,-10,0"></Image>
+
+                                </StackLayout>
+
+                                <StackLayout Orientation="Vertical" Margin="15,0,0,0">
+                                    <Label Text="{Binding NazivPonude} " 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+
+                                    <Label Text="{Binding brojPutovanja, 
+                                 StringFormat='Putovanja : {0}'} " 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="13" />
+
+                                    <Grid HorizontalOptions="End" VerticalOptions="End" Margin="10,150,0,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="50" />
+                                         
+
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="220" />
+                                          
+
+                                        </Grid.ColumnDefinitions>
+
+
+                                        <Button   Clicked="Button1_Clicked" Grid.Row="0" BindingContext="{Binding PonudaId}" Grid.Column="0" Text="Prikazi putovanja"  BackgroundColor="#87CEEB"  TextColor="White"></Button>
+
+                                    </Grid>
+
+
+
+                                </StackLayout>
+
+                              
+
+
+
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

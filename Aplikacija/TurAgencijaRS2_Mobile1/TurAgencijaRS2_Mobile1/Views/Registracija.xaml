@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:TurAgencijaRS2_Mobile1.ViewModels"
+             x:Class="TurAgencijaRS2_Mobile1.Views.Registracija">
+
+
+    <ContentPage.BindingContext>
+
+        <viewModels:RegistracijaViewModel />
+
+    </ContentPage.BindingContext>
+
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="WT"  Margin="5" TextColor="#87CEEB" Font="Bold,50"></Label>
+
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="15">
+
+           
+                <Entry Text="{Binding Ime}"  Placeholder="Ime "></Entry>
+                <Entry Text="{Binding Prezime}" Placeholder="Prezime"></Entry>
+                <Entry Text="{Binding Email}" Placeholder="Email"></Entry>
+                <Entry Text="{Binding Telefon}" Placeholder="Telefon"></Entry>
+                <Entry Text="{Binding Password}" Placeholder="Lozinka" IsPassword="True"></Entry>
+              
+
+
+                <Picker Title="Grad" ItemsSource="{Binding gradoviList}" SelectedItem="{Binding SelectedGrad}" ItemDisplayBinding="{Binding naziv}"></Picker>
+
+                <Picker Title="Spol" ItemsSource="{Binding spol}" SelectedItem="{Binding SelectedSpol}" ItemDisplayBinding="{Binding Value}"></Picker>
+
+                <Label Text="Datum rođenja"></Label>
+                <DatePicker Date="{Binding datumRodjenja}"></DatePicker>
+             
+                <Entry Text="{Binding Adresa}" Placeholder="Adresa"></Entry>
+
+
+
+                <Grid HorizontalOptions="End">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                     
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                       
+
+                    </Grid.ColumnDefinitions>
+                    <Button Command="{Binding SubmitCommand}" Grid.Row="0" Grid.Column="0" Text="Snimi" BackgroundColor="#87CEEB" TextColor="White"></Button>
+
+
+
+                </Grid>
+
+
+
+
+         
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

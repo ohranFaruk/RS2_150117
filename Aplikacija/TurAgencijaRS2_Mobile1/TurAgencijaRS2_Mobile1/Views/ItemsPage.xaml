@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TurAgencijaRS2_Mobile1.Views.ItemsPage"
+              Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="add.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout Orientation="Vertical" >
+
+        <StackLayout Margin="5">
+        <StackLayout  HorizontalOptions="CenterAndExpand" >
+            <Image Source="agencija.png" WidthRequest="120" HeightRequest="120"></Image>
+            <Label  Text="World tour travel agency" FontSize="23" TextColor="Black"  Style="{DynamicResource ListItemTextStyle}"   />
+        </StackLayout>
+        </StackLayout>
+
+
+
+        <StackLayout Padding="10" Orientation="Horizontal" >
+
+
+            <StackLayout  HorizontalOptions="StartAndExpand">
+
+                <Image Source="plaza.jpg"  WidthRequest = "300" HeightRequest = "300" MinimumHeightRequest = "300" MinimumWidthRequest = "300" Margin="0,-50" ></Image>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="5">
+                <Label Text="Putujte na naše najljepše plaže " 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16"  />
+                <Label Text="Otkrijte naše ponude i uživajte na najljepšim" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                <Label Text=" plažama cijelog svijeta" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+
+            </StackLayout>
+
+        </StackLayout>
+
+
+        <StackLayout Padding="10" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+
+
+            <StackLayout>
+
+                <Image Source="zima.jpg"  WidthRequest = "300" HeightRequest = "300" MinimumHeightRequest = "300" MinimumWidthRequest = "300" Margin="0,-50" ></Image>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="5">
+                <Label Text="Uživajte čitavu godinu " 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16"  />
+                <Label Text="Sa WT putujete u svakom godišnjem dobu na" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                <Label Text=" najljepša mjesta u najbolje hotele" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+
+            </StackLayout>
+
+        </StackLayout>
+
+
+
+    </StackLayout>
+
+</ContentPage>

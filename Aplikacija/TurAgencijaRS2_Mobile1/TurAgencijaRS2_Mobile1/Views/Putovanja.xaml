@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:TurAgencijaRS2_Mobile1.ViewModels"
+             xmlns:converters="clr-namespace:TurAgencijaRS2_Mobile1.Converters"
+             x:Class="TurAgencijaRS2_Mobile1.Views.Putovanja"
+             x:Name="page">
+
+
+    <ContentPage.BindingContext>
+
+        <viewModels:PutovanjaViewModel></viewModels:PutovanjaViewModel>
+
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <ListView ItemsSource="{Binding putovanjaList}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+
+
+                                <StackLayout Margin="0,-50,0,0">
+
+
+                                    <Image Source="{Binding Slika, Converter={StaticResource imgConv}}"  WidthRequest = "300" HeightRequest = "300" MinimumHeightRequest = "300" MinimumWidthRequest = "300" Margin="0,0,-10,0"></Image>
+
+                                </StackLayout>
+
+                                <StackLayout Orientation="Vertical" Margin="15,0,0,0">
+                                   
+                                    <Label Text="{Binding grad} " 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+
+                                    <Label Text="{Binding Cijena, 
+                                 StringFormat='Cijena : {0}'} " 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="13" />
+
+                                    <Label Text="{Binding DatumPolaska, 
+                                 StringFormat='Polazak : {0}'} " 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="13" />
+
+                                    <Label Text="{Binding DatumPovratka, 
+                                 StringFormat='Dolazak : {0}'} " 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="13" />
+
+
+
+
+
+                                </StackLayout>
+                                <Grid HorizontalOptions="End" VerticalOptions="End">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40" />
+                                     
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100" />
+                                      
+
+                                    </Grid.ColumnDefinitions>
+                                   
+                                    <Button Grid.Row="0" Grid.Column="0"   CommandParameter="{Binding PutovanjeId}" 
+                                            Command="{Binding BindingContext.KreirajRezervaciju, Source={x:Reference page}" Text="Rezerviši"   
+                                            BackgroundColor="#87CEEB"  TextColor="White" Padding="0,0,20,0">
+
+                                    </Button>
+
+
+                                </Grid>
+
+
+
+
+
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+          
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

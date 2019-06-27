@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{445A69BE-0B76-485F-9838-7C3EF5251725}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TurAgencijaRS2_UI</RootNamespace>
+    <AssemblyName>TurAgencijaRS2_UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Flurl, Version=2.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.2.8.2\lib\net40\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.Http.2.4.2\lib\net46\Flurl.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols">
+      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.protocols\5.3.0\lib\netstandard2.0\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\homeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\homeAdmin.Designer.cs">
+      <DependentUpon>homeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\mainAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\mainAdmin.Designer.cs">
+      <DependentUpon>mainAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\recenzijeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\recenzijeAdmin.Designer.cs">
+      <DependentUpon>recenzijeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\userEditAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\userEditAdmin.Designer.cs">
+      <DependentUpon>userEditAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="APIService.cs" />
+    <Compile Include="GradoviAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GradoviAdd.Designer.cs">
+      <DependentUpon>GradoviAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="izmjenaLozinke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="izmjenaLozinke.Designer.cs">
+      <DependentUpon>izmjenaLozinke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Admin\userDetailAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\userDetailAdmin.Designer.cs">
+      <DependentUpon>userDetailAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportViewForm.Designer.cs">
+      <DependentUpon>ReportViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TuristickaAgencija_RS2DataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TuristickaAgencija_RS2DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UIHelper.cs" />
+    <Compile Include="Vodic\mainVodic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vodic\mainVodic.Designer.cs">
+      <DependentUpon>mainVodic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vodic\recenzijeVodic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vodic\recenzijeVodic.Designer.cs">
+      <DependentUpon>recenzijeVodic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vodic\zaduzenjaOdgodiVodic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vodic\zaduzenjaOdgodiVodic.Designer.cs">
+      <DependentUpon>zaduzenjaOdgodiVodic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vodic\zaduzenjaVodic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vodic\zaduzenjaVodic.Designer.cs">
+      <DependentUpon>zaduzenjaVodic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik\mainZaposlenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zaposlenik\mainZaposlenik.Designer.cs">
+      <DependentUpon>mainZaposlenik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik\ponudaDetailZaposlenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zaposlenik\ponudaDetailZaposlenik.Designer.cs">
+      <DependentUpon>ponudaDetailZaposlenik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik\ponudeZaposlenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zaposlenik\ponudeZaposlenik.Designer.cs">
+      <DependentUpon>ponudeZaposlenik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik\putovanjaDetailZaposlenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zaposlenik\putovanjaDetailZaposlenik.Designer.cs">
+      <DependentUpon>putovanjaDetailZaposlenik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik\putovanjaZaposlenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zaposlenik\putovanjaZaposlenik.Designer.cs">
+      <DependentUpon>putovanjaZaposlenik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik\zaduzenjaDetailZaposlenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zaposlenik\zaduzenjaDetailZaposlenik.Designer.cs">
+      <DependentUpon>zaduzenjaDetailZaposlenik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik\zaduzenjaZaposlenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zaposlenik\zaduzenjaZaposlenik.Designer.cs">
+      <DependentUpon>zaduzenjaZaposlenik.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\homeAdmin.resx">
+      <DependentUpon>homeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\mainAdmin.resx">
+      <DependentUpon>mainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\recenzijeAdmin.resx">
+      <DependentUpon>recenzijeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\userEditAdmin.resx">
+      <DependentUpon>userEditAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GradoviAdd.resx">
+      <DependentUpon>GradoviAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="izmjenaLozinke.resx">
+      <DependentUpon>izmjenaLozinke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Admin\userDetailAdmin.resx">
+      <DependentUpon>userDetailAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\ReportViewForm.resx">
+      <DependentUpon>ReportViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vodic\mainVodic.resx">
+      <DependentUpon>mainVodic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vodic\recenzijeVodic.resx">
+      <DependentUpon>recenzijeVodic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vodic\zaduzenjaOdgodiVodic.resx">
+      <DependentUpon>zaduzenjaOdgodiVodic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vodic\zaduzenjaVodic.resx">
+      <DependentUpon>zaduzenjaVodic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zaposlenik\mainZaposlenik.resx">
+      <DependentUpon>mainZaposlenik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zaposlenik\ponudaDetailZaposlenik.resx">
+      <DependentUpon>ponudaDetailZaposlenik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zaposlenik\ponudeZaposlenik.resx">
+      <DependentUpon>ponudeZaposlenik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zaposlenik\putovanjaDetailZaposlenik.resx">
+      <DependentUpon>putovanjaDetailZaposlenik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zaposlenik\putovanjaZaposlenik.resx">
+      <DependentUpon>putovanjaZaposlenik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zaposlenik\zaduzenjaDetailZaposlenik.resx">
+      <DependentUpon>zaduzenjaDetailZaposlenik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zaposlenik\zaduzenjaZaposlenik.resx">
+      <DependentUpon>zaduzenjaZaposlenik.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.Gradovi.datasource" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.KontaktPodaci.datasource" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.Korisnici.datasource" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.ObjectExtension.datasource" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.Ponude.datasource" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.Putovanja.datasource" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.Recenzije.datasource" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.Regije.datasource" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.Rezervacije.datasource" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.Turisti.datasource" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.Zaduzenja.datasource" />
+    <None Include="Properties\DataSources\TurAgencijaRS2_Model.Zaposlenici.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TuristickaAgencija_RS2DataSet8.xsc">
+      <DependentUpon>TuristickaAgencija_RS2DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="TuristickaAgencija_RS2DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TuristickaAgencija_RS2DataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TuristickaAgencija_RS2DataSet8.xss">
+      <DependentUpon>TuristickaAgencija_RS2DataSet8.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TurAgencijaRS2_Model\TurAgencijaRS2_Model.csproj">
+      <Project>{9914fcdc-ccae-45be-98f0-cb5b71ceb55f}</Project>
+      <Name>TurAgencijaRS2_Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

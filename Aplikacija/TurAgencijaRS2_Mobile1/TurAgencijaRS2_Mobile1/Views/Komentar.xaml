@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:viewModels="clr-namespace:TurAgencijaRS2_Mobile1.ViewModels"
+             x:Class="TurAgencijaRS2_Mobile1.Views.Komentar">
+
+
+
+    <ContentPage.BindingContext>
+
+        <viewModels:KomentarViewModel />
+
+    </ContentPage.BindingContext>
+
+
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Label Text="WT"  Margin="5" TextColor="#87CEEB" Font="Bold,50"></Label>
+            <StackLayout  HorizontalOptions="CenterAndExpand"  >
+              
+                <Image Source="komentar.png" WidthRequest="100" HeightRequest="100"></Image>
+                <Label  Text="{Binding Naziv}" FontSize="23" TextColor="Black"  Style="{DynamicResource ListItemTextStyle}"   />
+                
+            </StackLayout>
+
+            <StackLayout Padding="5" >
+                <Label Text="Komentar : "/>
+                <Entry Text="{Binding Komentar}" ></Entry>
+
+
+                <Picker Title="Ocjena" ItemsSource="{Binding Ocjene}"
+                        ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedOcjena}" />
+
+
+                <Grid HorizontalOptions="End">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110" />
+
+                    </Grid.ColumnDefinitions>
+                    <Button Command="{Binding SubmitCommand}"  Grid.Row="0" Grid.Column="0" Text="Snimi" BackgroundColor="#87CEEB" TextColor="White"></Button>
+
+
+
+
+
+                </Grid>
+
+
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

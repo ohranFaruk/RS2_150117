@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:TurAgencijaRS2_Mobile1.ViewModels"
+             xmlns:converters="clr-namespace:TurAgencijaRS2_Mobile1.Converters"
+             x:Class="TurAgencijaRS2_Mobile1.Views.GradoviPage">
+
+    <ContentPage.BindingContext>
+
+        <viewModels:GradoviViewModel></viewModels:GradoviViewModel>   
+
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    
+    
+    
+    
+    
+    
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Gradovi"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Picker ItemsSource="{Binding regijeList}" SelectedItem="{Binding SelectedRegija}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+
+            <ListView ItemsSource="{Binding gradoviList}" ItemSelected="ListView_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+
+
+                                <StackLayout>
+
+                                    <Image Source="{Binding Slika, Converter={StaticResource imgConv}}"  WidthRequest = "300" HeightRequest = "300" MinimumHeightRequest = "300" MinimumWidthRequest = "300" Margin="0,-50,0,0"></Image>
+
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Naziv} " 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16"  />
+                                    <Label Text="{Binding GradId}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+
+                                </StackLayout>
+                               
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
